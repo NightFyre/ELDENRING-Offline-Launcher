@@ -1,6 +1,6 @@
 # ELDEN RING Offline Bypass Launcher
 Base Template for Launching Elden Ring w/ a variety of Launch Options  
-Bypass and Injection have both been removed , if you would like to support my work please reach out to me via Discord or by visiting [MyWebsite](http://www.nightfyre.tk)  
+Bypass and Injection have both been removed. Do the GameHackingBible if you would like to implement those features yourself  
 Special thanks to Rake , Broihon and everybody else at GuidedHacking for getting me started on this path a few months back!  
 
 USAGE:
