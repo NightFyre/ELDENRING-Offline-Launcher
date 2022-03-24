@@ -20,10 +20,6 @@ LABEL_START:
 
 	if (console_T.SELECTION == 1) {
 		///	switch (EAC) case(1) in Launcher();
-
-		//	INFO
-		//	MORE INFO => https://www.unknowncheats.me/forum/3385240-post1.html
-		//	NOTE: You will still encounter "Innappropriate activity detected" at main menu unless you handle the params correctly, again do the GameHackingBible.
 		console_T.notImplemented(2);
 		goto LABEL_START;
 	}
