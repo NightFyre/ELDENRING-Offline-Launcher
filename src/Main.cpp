@@ -12,20 +12,14 @@ LABEL_START:
 	std::cin >> console_T.SELECTION;
 
 	//  EXCEPTIONS
-	if (console_T.SELECTION <= 0 || console_T.SELECTION >= 5) {
+	if (console_T.SELECTION <= 0 || console_T.SELECTION >= 4) {
 		console_T.notImplemented(1);
 		goto LABEL_START;
 	}
-	else if (console_T.SELECTION == 4) return 0;
-
-	if (console_T.SELECTION == 1) {
-		///	switch (EAC) case(1) in Launcher();
-		console_T.notImplemented(2);
-		goto LABEL_START;
-	}
+	else if (console_T.SELECTION == 3) return 0;
 
 	//	INJECT DEBUG BOOL
-	if (console_T.SELECTION == 3) {
+	if (console_T.SELECTION == 2) {
 		///	Set Boolean to true, handle injection post launch AFTER resuming the thread
 		// proc_T.INJECT = TRUE;
 
@@ -43,20 +37,6 @@ LABEL_START:
 
 void Launcher(CONSOLE c, PROCESS p, int EAC, bool INJECT)
 {
-	//  LAUNCH PARAMS
-	switch (EAC) {
-	case (1):
-		//	ONLINE w/ EAC Disabled
-		// REMOVED FOR OBVIOUS REASONS. Do the Guided Hacking Bible @ http://www.GuidedHacking.com/
-		return;	
-		break;
-
-	case (2):
-		//	OFFLINE w/ EAC Disabled
-		//	Displays tamper notice at launch, even with steam in offline mode
-		break;
-	}
-
 	//  ALLOC MEMORY
 	p.allocMem(p.pInfo, p.sInfo);
 
@@ -70,7 +50,7 @@ void Launcher(CONSOLE c, PROCESS p, int EAC, bool INJECT)
 	Sleep(2500);
 	
 	//	HIDE CONSOLE WINDOW
-	ShowWindow(c.WINDOW, SW_HIDE);
+	//ShowWindow(c.WINDOW, SW_HIDE);	// This will hide the console window
 
 	//  PAUSE PROCESS
 	SuspendThread(p.pInfo.hThread);
