@@ -42,8 +42,8 @@ void Launcher(CONSOLE c, PROCESS p, int EAC, bool INJECT)
 
 	//  CREATE PROCESS
 	if (!CreateProcessW(p.PATH, (LPWSTR)p.PARAMS, NULL, NULL, FALSE, 0, NULL, NULL, &p.sInfo, &p.pInfo)) {
-		printf("[!] CREATE PROCESS FAILED!\n ERROR CODE: (%d). \n\n", GetLastError());
-		Sleep(2500);
+		printf("[!] CREATE PROCESS FAILED!\n[!]ERROR CODE: (%d)\n[!]Exiting . . .\n", GetLastError());
+		Sleep(5000);
 		return;
 	}
 	printf("[+] Elden Ring Launched\n");
@@ -64,7 +64,7 @@ void Launcher(CONSOLE c, PROCESS p, int EAC, bool INJECT)
 
 	//  INJECT
 	if (INJECT) {
-		printf("GAME LAUNCHED press [INSERT] to INJECT");
+		printf("[+] Press [INSERT] to INJECT\n");
 		while (GetAsyncKeyState(VK_INSERT) == 0)
 			Sleep(60);
 		//	Visit http://www.GuidedHacking.com to learn more. 

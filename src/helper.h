@@ -34,8 +34,8 @@ struct CONSOLE {
 
 	virtual void displayOptions() {
 		system("cls");
-		printf("[1] OFFLINE w/ EasyAntiCheat Disabled\n");
-		printf("[2] INJECT Debug Tool + OFFLINE EAC Bypass\n");
+		printf("[1] OFFLINE w/ EAC Disabled\n");
+		printf("[2] OFFLINE w/ EAC Disabled + INJECT\n");
 		printf("[3] QUIT\n\n");
 	}
 
@@ -43,7 +43,7 @@ struct CONSOLE {
 		SELECTION = NULL;
 		system("cls");
 		if (Message == 1)
-			printf("[!] INVALID SELECTION!\n Please try again\n");
+			printf("[!] INVALID SELECTION!\nPlease try again\n");
 		if (Message == 2)
 			printf("[!] NOT IMPLENTED IN THIS VERSION!\n");
 		Sleep(2500);
