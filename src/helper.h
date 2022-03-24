@@ -34,10 +34,9 @@ struct CONSOLE {
 
 	virtual void displayOptions() {
 		system("cls");
-		printf("[1] ONLINE w/ EasyAntiCheat Disabled\n");
-		printf("[2] OFFLINE w/ EasyAntiCheat Disabled\n");
-		printf("[3] INJECT Debug Tool + OFFLINE EAC Bypass\n");
-		printf("[4] QUIT\n\n");
+		printf("[1] OFFLINE w/ EasyAntiCheat Disabled\n");
+		printf("[2] INJECT Debug Tool + OFFLINE EAC Bypass\n");
+		printf("[3] QUIT\n\n");
 	}
 
 	virtual void notImplemented(int Message) {
