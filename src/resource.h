@@ -3,6 +3,8 @@
 // Used by EldenRing_Launcher.rc
 //
 #define IDI_ICON1                       101
+#define INTERNAL 257
+#define IDR_ELDENRING 1337
 
 // Next default values for new objects
 // 

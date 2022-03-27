@@ -21,12 +21,7 @@ LABEL_START:
 	//	INJECT DEBUG BOOL
 	if (console_T.SELECTION == 2) {
 		///	Set Boolean to true, handle injection post launch AFTER resuming the thread
-		// proc_T.INJECT = TRUE;
-
-		//	INFO
-		//	MORE INFO => https://guidedhacking.com/threads/manual-mapping-dll-injection-tutorial-how-to-manual-map.10009/
-		console_T.notImplemented(2);
-		goto LABEL_START;
+		proc_T.INJECT = TRUE;
 	}
 
 	system("cls");
@@ -50,7 +45,7 @@ void Launcher(CONSOLE c, PROCESS p, int EAC, bool INJECT)
 	Sleep(2500);
 	
 	//	HIDE CONSOLE WINDOW
-	//ShowWindow(c.WINDOW, SW_HIDE);	// This will hide the console window
+	ShowWindow(c.WINDOW, SW_HIDE);
 
 	//  PAUSE PROCESS
 	SuspendThread(p.pInfo.hThread);
@@ -64,12 +59,15 @@ void Launcher(CONSOLE c, PROCESS p, int EAC, bool INJECT)
 
 	//  INJECT
 	if (INJECT) {
-		printf("[+] Press [INSERT] to INJECT\n");
-		while (GetAsyncKeyState(VK_INSERT) == 0)
-			Sleep(60);
 		//	Visit http://www.GuidedHacking.com to learn more. 
 		// Broihon has an amazing write up
-		// inject();	Manual Map inject a dll into the target process
+		if (!Inject(p.pInfo.hProcess)) {
+			MessageBoxA(NULL, "FAILED TO INJECT INTO PROCESS!\n\nTROUBLESHOOTING TIPS:\n[1] double check the dll name is 'ER Overlay.dll'\n[2] Make sure you have placed the dll in the correcr path 'ELDEN RING\Game\CUSTOM\ER Overlay.dll'\n", "ERROR", MB_ICONERROR);
+			TerminateProcess(p.pInfo.hProcess, EXIT_FAILURE);
+			CloseHandle(p.pInfo.hProcess);
+			CloseHandle(p.pInfo.hThread);
+			return;
+		}
 	}
 
 	//	KEEPS LAUNCHER RUNNING IN BACKGROUND
