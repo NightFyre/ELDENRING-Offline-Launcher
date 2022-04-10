@@ -1,12 +1,17 @@
-# ELDEN RING Offline Bypass Launcher
+# ELDEN RING Offline Bypass Launcher  
 Base Template for Launching Elden Ring w/ a variety of Launch Options  
-Do the GameHackingBible if you would like to implement the removed features yourself  
-Special thanks to Rake , Broihon and everybody else at GuidedHacking for getting me started on this path a few months back!  
+<p align="center">
+  <img width="231" height="135" src="https://user-images.githubusercontent.com/80198020/162633471-8fa856ee-2ff5-403c-b5e8-e4597360a3d5.png">
+</p>
 
-USAGE:
-- Build the project  (icon is pointed to some folder , be sure to comment out the reference in the resource file or supply new path) 
+**BUILD INSTRUCTIONS:**
+- Clone the main branch
+- Build the project
 - Place the binary inside of your games directory (SteamLibrary\steamapps\common\ELDEN RING\Game)  
-- Launch Via Steam  
+- * if injecting, Create a folder "CUSTOM" in the ELDEN RING game folder. 
+- * Name the DLL "ER Overlay.dll"
+- Launch ELDEN RING via Steam  
+- The launcher should appear, select either "LAUNCH' or "LAUNCH & INJECT"  
 
 https://user-images.githubusercontent.com/80198020/158001798-58b3a5d3-889b-45f2-a926-877e82881f62.mp4
 
